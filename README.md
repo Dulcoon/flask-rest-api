@@ -63,29 +63,41 @@ run.py             # Application entry point
 ## 🚀 Getting Started (Local Setup)
 
 ### 1 Clone Repository
-- git clone <repo-url>
-- cd flask-rest-api
+```
+git clone <repo-url>
+cd flask-rest-api
+```
 
 ### 2 Create Virtual Environment
+```
 python -m venv venv
-
-activate virtual environment
-Windows:
+```
+activate virtual environment  
+Windows:  
+```
 venv\Scripts\activate
-
+```
 macOS / Linux:
+```
 source venv/bin/activate
+```
 
 ### 3 Install Dependencies
+```
 pip install -r requirements.txt
+```
 
 ### 4 Databaase Migration
-- flask db init
-- flask db migrate
-- flask db upgrade
+```
+flask db init
+flask db migrate
+flask db upgrade
+```
 
 ### 5 Run Aplication
+```
 python run.py
+```
 
 The API will be available at:
 http://127.0.0.1:5000

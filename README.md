@@ -46,15 +46,16 @@ No frontend interface is included — API only.
 
 
 ## Project Structure
+```
 app/
-├── models/ # Database models (User, Product, Order)
-├── routes/ # API routes (auth, product, order, user)
-├── utils/ # Helper utilities (password hashing)
-├── extensions.py # Flask extensions (db, jwt, migrate)
-├── config.py # App configuration
-├── init.py # Application factory
-run.py # Application entry point
-
+├── models/        # Database models (User, Product, Order)
+├── routes/        # API routes (auth, product, order, user)
+├── utils/         # Helper utilities (password hashing)
+├── extensions.py  # Flask extensions (db, jwt, migrate)
+├── config.py      # App configuration
+├── __init__.py    # Application factory
+run.py             # Application entry point
+```
 
 ---
 
@@ -62,8 +63,8 @@ run.py # Application entry point
 ## 🚀 Getting Started (Local Setup)
 
 ### 1 Clone Repository
-git clone <repo-url>
-cd flask-rest-api
+- git clone <repo-url>
+- cd flask-rest-api
 
 ### 2 Create Virtual Environment
 python -m venv venv
@@ -79,9 +80,9 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 ### 4 Databaase Migration
-flask db init
-flask db migrate
-flask db upgrade
+- flask db init
+- flask db migrate
+- flask db upgrade
 
 ### 5 Run Aplication
 python run.py
@@ -172,8 +173,8 @@ Authorization: Bearer <JWT_TOKEN>
 
 
 ## Deployment Note ❗
-This project uses SQLite, which is suitable for local development and testing.
-For serverless platforms (e.g. Vercel), an external database would be required.
+This project uses SQLite, which is suitable for local development and testing.  
+For serverless platforms (e.g. Vercel), an external database would be required.  
 Deployment is optional and not included in this repository.
 
 
@@ -181,5 +182,5 @@ Deployment is optional and not included in this repository.
 
 
 ## Author
-Michael Valensio
+Michael Valensio  
 Developed as part of a backend internship technical assessment at JogjaCodingHouse (CODING COLECTIVE).

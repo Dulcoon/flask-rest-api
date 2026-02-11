@@ -119,14 +119,14 @@ Authorization: Bearer <JWT_TOKEN>
 ## API Endpoints Overview
 - Auth
 | Method | Endpoint       | Description       |
-| ------ | -------------- | ----------------- |
+| ------ | -------------- | ------------------|
 | POST   | /auth/register | Register new user |
 | POST   | /auth/login    | Login & get JWT   |
 
 - User
-| Method | Endpoint  | Auth |
-| ------ | --------- | ---- |
-| GET    | /users/me | yes  |
+| Method | Endpoint       | Auth |
+| ------ | -------------- | ---- |
+| GET    | /users/me      | yes  |
 
 -Product
 | Method | Endpoint       | Auth |

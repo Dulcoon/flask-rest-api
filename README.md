@@ -117,13 +117,13 @@ Authorization: Bearer <JWT_TOKEN>
 
 
 ## API Endpoints Overview
-- Auth
+-Auth
 | Method | Endpoint       | Description       |
 | ------ | -------------- | ------------------|
 | POST   | /auth/register | Register new user |
 | POST   | /auth/login    | Login & get JWT   |
 
-- User
+-User
 | Method | Endpoint       | Auth |
 | ------ | -------------- | ---- |
 | GET    | /users/me      | yes  |

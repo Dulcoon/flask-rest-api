@@ -64,7 +64,7 @@ run.py             # Application entry point
 
 ### 1 Clone Repository
 ```
-git clone <repo-url>
+git clone https://github.com/Dulcoon/flask-rest-api.git
 cd flask-rest-api
 ```
 

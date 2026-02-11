@@ -158,6 +158,200 @@ Authorization: Bearer <JWT_TOKEN>
 ---
 
 
+## API Usage Examples
+
+All requests and responses use JSON format.
+
+Base URL (local development):
+
+```
+http://127.0.0.1:5000
+```
+
+---
+
+### 🔐 Authentication
+
+#### Register
+
+**POST** `/auth/register`
+
+Request:
+
+```json
+{
+  "email": "user@mail.com",
+  "password": "secret123"
+}
+```
+
+Response (201 Created):
+
+```json
+{
+  "message": "user registered successfully",
+  "user_id": 1
+}
+```
+
+---
+
+#### Login
+
+**POST** `/auth/login`
+
+Request:
+
+```json
+{
+  "email": "user@mail.com",
+  "password": "secret123"
+}
+```
+
+Response (200 OK):
+
+```json
+{
+  "access_token": "<JWT_TOKEN>"
+}
+```
+
+Use the token in protected endpoints:
+
+```
+Authorization: Bearer <JWT_TOKEN>
+```
+
+---
+
+### 📦 Product
+
+#### Create Product (Protected)
+
+**POST** `/products`
+
+Headers:
+```
+Authorization: Bearer <JWT_TOKEN>
+Content-Type: application/json
+```
+
+Request:
+
+```json
+{
+  "name": "Mechanical Keyboard",
+  "price": "1250000.50",
+  "stock": 10
+}
+```
+
+Response (201 Created):
+
+```json
+{
+  "id": 1,
+  "name": "Mechanical Keyboard",
+  "price": "1250000.50",
+  "stock": 10
+}
+```
+
+---
+
+#### Get All Products
+
+**GET** `/products`
+
+Response (200 OK):
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Mechanical Keyboard",
+    "price": "1250000.50",
+    "stock": 10
+  }
+]
+```
+
+---
+
+### 🧾 Order
+
+#### Create Order (Protected)
+
+**POST** `/orders`
+
+Headers:
+```
+Authorization: Bearer <JWT_TOKEN>
+Content-Type: application/json
+```
+
+Request:
+
+```json
+{
+  "product_id": 1,
+  "quantity": 2
+}
+```
+
+Response (201 Created):
+
+```json
+{
+  "order_id": 1,
+  "user_id": 1,
+  "product_id": 1,
+  "quantity": 2,
+  "total_price": "2500001.00"
+}
+```
+
+---
+
+#### Get My Orders (Protected)
+
+**GET** `/orders`
+
+Headers:
+```
+Authorization: Bearer <JWT_TOKEN>
+```
+
+Response (200 OK):
+
+```json
+[
+  {
+    "id": 1,
+    "product_id": 1,
+    "quantity": 2,
+    "total_price": "2500001.00",
+    "created_at": "2026-02-11T10:30:00"
+  }
+]
+```
+
+---
+
+## Error Example
+
+Example validation error (400 Bad Request):
+
+```json
+{
+  "error": "quantity must be a positive integer"
+}
+```
+
+---
+
+
 ## Authorization Rules
 - Public endpoints:
   - GET /products

@@ -89,8 +89,6 @@ pip install -r requirements.txt
 
 ### 4 Databaase Migration
 ```
-flask db init
-flask db migrate
 flask db upgrade
 ```
 
